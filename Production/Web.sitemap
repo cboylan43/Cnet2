@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Homeless" description="Home">
+    <siteMapNode url="~/Default.aspx" title="Home"  description="Home"/>
+      <siteMapNode url="~/Homework/Homework02/Homework2.aspx" title="Homework02"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework03/Homework03.aspx" title="Homework03"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework04/Homework04.aspx" title="Homework04"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework05/Homework05.aspx" title="Homework05"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework06/UnderC.aspx" title="Homework06"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework07/UnderC.aspx" title="Homework07"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework08/UnderC.aspx" title="Homework08"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework09/UnderC.aspx" title="Homework09"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework10/UnderC.aspx" title="Homework10"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework11/UnderC.aspx" title="Homework11"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework12/UnderC.aspx" title="Homework12"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework13/UnderC.aspx" title="Homework13"  description="Homework folder"/>
+      <siteMapNode url="~/Homework/Homework14/UnderC.aspx" title="Homework14"  description="Homework folder"/>
+
+    <!--</siteMapNode>-->
+
+    <!--<siteMapNode url="" title=""  description="" />-->
+  </siteMapNode>
+</siteMap>

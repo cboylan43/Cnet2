@@ -1,0 +1,53 @@
+﻿*
+{
+  /* 
+    Defines the main font used throughout the entire site 
+  */
+  font-family: Arial, Sans-Serif;
+}
+
+body
+{
+  /* 
+    Clears white space around the body and gives it a dark gray color.
+  */
+  margin: 0;
+  background-color: #cccccc;
+}
+
+a
+{
+  /*
+    Clears the underline on normal links, and gives them a purple text color.
+  */
+  text-decoration: none;
+  color: #4628C4;
+}
+
+a:hover
+{
+  /*
+    Underlines links when the user hovers the mouse over them.
+  */
+  text-decoration : underline;
+}
+#MenuWrapper
+{
+  /*
+    The menu spans the page width, right below the header.
+    At the top and left a few pixels padding is applied to create some room.
+  */
+  /*background-image: url(Images/MenuBackground.jpg);*/
+  width: 827px;
+  height: 36px;
+  padding-top: 7px;
+  padding-left: 17px;
+}
+
+#MenuWrapper a
+{
+  /*
+    Links in the Menu are white. 
+  */
+  color: #fff;
+}

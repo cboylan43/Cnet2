@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Master_Main" %>
+
+<%--
+Form: frontend.master
+Class: ASP.NET with C# 2
+Author: Chris Boylan
+Abstract: MasterPage
+--%>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Chris Boylan CPDM-152</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <form id="frmMainMaster" runat="server">
+    <header>
+   
+         <img alt="Chris at HR Derby and Class name" class="img-rounded center-block"src="/C2-BoylanC/Images/Header.jpg" />
+    </header>
+    <div class="container">
+        <nav class="nav navbar-default navbar-left navbar-text">
+            <asp:Menu ID="mnuMain"  runat="server" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="False"></asp:Menu>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+        </nav>
+        <div id="MainContnet" class="center-block">
+        <asp:ContentPlaceHolder id="cpMainContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </div>
+    </div>
+    <div class="container">
+        <footer class="panel-footer">
+            <p class="center-block text-center">
+                Copyright Chris Boylan   <a href="mailto:cboylan43@yahoo.com">Feedback and Comments</a>
+            </p>
+        </footer>
+    </div>
+    </form>
+
+</body>
+</html>

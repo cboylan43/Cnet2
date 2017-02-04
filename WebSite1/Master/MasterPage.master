@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Master_MasterPage" %>
+<%--<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Master_MasterPage" theme="Base"%>--%>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Chris Boylan</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+        
+</head>
+<body>
+  
+    <form id="form1" runat="server">
+    <div id="PageWrapper">
+    <header><a href="/">Chris Boylan CPDM-152</a></header>
+         
+                    <nav class="navbar">
+                     <asp:Menu  ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" StaticEnableDefaultPopOutImage="False"></asp:Menu>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                    </nav>
+                
+                        <section id="MainContent">
+                        <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                        </section>
+               
+    
+    <footer>Footer Goes Here</footer>
+    </div>
+    </form>
+   
+</body>
+</html>
