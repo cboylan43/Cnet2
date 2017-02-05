@@ -9,12 +9,12 @@ using System.Web;
 public class chomework04
 {
 	// used to find the factorial of a number
-	public int iFact(int n)
+	public int iFact(int intn)
     {
-        if (n <= 1)
+        if (intn <= 1)
             return 1;
         int result = 1;
-        for (int i = 2; i <= n; i++)
+        for (int i = 2; i <= intn; i++)
         {
             result = result + i;
         }
@@ -23,38 +23,38 @@ public class chomework04
     // will give the sum of all odd numbers between two other numbers
     public int iOddAdd(int intUpper, int intLower)
     {
-        int iTotal = 0;
+        int intTotal = 0;
 
-        for (int i = intLower; i < intUpper; i++)
+        for (int inti = intLower; inti < intUpper; inti++)
         {
-            if ((i % 2) != 0)
+            if ((inti % 2) != 0)
             {
-                iTotal = iTotal + i;
+                intTotal = intTotal + inti;
             }
         }
-        return iTotal;
+        return intTotal;
 
     }
     // add every 6.78/2.17 number from ( -212 / 7.304 ) to -690.3 and return the result
     // yes  a one shot function, not really great coding.
     public double dAdditionLoop ( )
     {
-        double dResult = 0;
-        double d = (-212 / 7.304);
+        double dblResult = 0;
+        double dbld = (-212 / 7.304);
         
-        while (d > (-690.3))
+        while (dbld > (-690.3))
         {
-            dResult = dResult + d;
-            d=(d - (6.78/2.17));
+            dblResult = dblResult + dbld;
+            dbld=(dbld - (6.78/2.17));
         }
-        return dResult;
+        return dblResult;
     }
     // return price adjusted by percentage - use a negative percent to show a discount
-    public float CalculateMarkup(float fbase, float fPercent)
+    public float CalculateMarkup(float sngbase, float sngPercent)
     {
-        float fResult = 0;
-        fResult = (fbase + fbase * fPercent);
-        return fResult;
+        float sngResult = 0;
+        sngResult = (sngbase + sngbase * sngPercent);
+        return sngResult;
     }
     // return the full name with the following format: “Last, First”.
     public string MakeFullName(string strFirstName, string strLastName)
@@ -62,64 +62,77 @@ public class chomework04
         return (strLastName + ", " + strFirstName);
     }
     // use switch statement to calculate the commission.   
-    public double CalculateCommision ( int iPrice, int iNumberSold)
+    public double CalculateCommision ( int intPrice, int intNumberSold)
     {
-        double iResult=0;
-        switch ( iNumberSold)
-        {
-            case 1:
-                // you only sold one item, you get nothing
-                break;
-            case 9:
-                iResult = (iNumberSold*iPrice * 0.05);
-                break;
-            case 99:
-                iResult = (iNumberSold*iPrice * 0.1);
-                break;
-            default:
-                iResult = (iNumberSold*iPrice * 0.15);
-                break;
-        }
+        double dblResult=0;
+        //   DANG C# SWITCH DOES NOT WORK AS WELL A VB  :)
+        //switch ( intNumberSold)
+        //{
+        //    case 1:
+        //        // you only sold one item, you get nothing
+        //        break;
+        //    case 9:
+        //        dblResult = (intNumberSold*intPrice * 0.05);
+        //        break;
+        //    case 99:
+        //        dblResult = (intNumberSold*intPrice * 0.1);
+        //        break;
+        //    default:
+        //        dblResult = (intNumberSold*intPrice * 0.15);
+        //        break;
+        //}
+        if (intNumberSold == 0)
+            dblResult = 0;
+        // nothing, you didn't sell anything
+        else if (intNumberSold < 10)
+            dblResult = (intNumberSold * intPrice * 0.05);
+        else if (intNumberSold < 100)
+            dblResult = (intNumberSold * intPrice * 0.1);
+        else
+            dblResult = (intNumberSold * intPrice * 0.15);
+        
 
-        return iResult;
+
+
+        return dblResult;
     }
     // number guesser  - I chose to make the Secret Number a variable for future re-use
-    public string NumberGuesser(int iSecretNumber, int iGuess)
+    public string NumberGuesser(int intSecretNumber, int intGuess)
     {
-        string sResult = "Error in Function";
-        if (iGuess < iSecretNumber)
-            sResult = "Number too low.";
-        if (iGuess == iSecretNumber)
-            sResult = "You guessed it.";
-        if (iGuess > iSecretNumber)
-            sResult = "Number too high.";
+        string strResult = "Error in Function";
+        if (intGuess < intSecretNumber)
+            strResult = "Number too low.";
+        if (intGuess == intSecretNumber)
+            strResult = "You guessed it.";
+        if (intGuess > intSecretNumber)
+            strResult = "Number too high.";
 
-        return sResult;
+        return strResult;
     }
-    public double Problem8(double dNumber)
+    public double Problem8(double dblNumber)
     {
-        double dResult = 0;
-        dResult = Math.Sqrt(Math.Pow(dNumber, 3) * 3 / (6 - 2));
+        double dblResult = 0;
+        dblResult = Math.Sqrt(Math.Pow(dblNumber, 3) * 3 / (6 - 2));
 
-        return dResult;
+        return dblResult;
     }
       
     // this is to check if string input is an integer
-    public Boolean bIntCheck(string sText)
+    public Boolean bIntCheck(string strText)
     {
-        int ignoreMe = 0;
-        Boolean bresult = int.TryParse(sText, out ignoreMe);
+        int intignoreMe = 0;
+        Boolean bresult = int.TryParse(strText, out intignoreMe);
         return bresult;
     }
-    public Boolean bFloatCheck(string sText)
+    public Boolean bFloatCheck(string strText)
     {
-        Single sIgnoreMe;
-        Boolean bresult = Single.TryParse(sText, out sIgnoreMe);
+        Single sngIgnoreMe;
+        Boolean bresult = Single.TryParse(strText, out sngIgnoreMe);
         return bresult;
     }
-    public Boolean bStringCheck ( string sText)
+    public Boolean bStringCheck ( string strText)
     {
-        Boolean bresult = string.IsNullOrEmpty(sText);
+        Boolean bresult = string.IsNullOrEmpty(strText);
         return bresult;
     }
 }

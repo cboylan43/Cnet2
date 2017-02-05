@@ -12,15 +12,15 @@ using System.Text.RegularExpressions;
 public class chomework05
 {
 	
-		public int iVowelCount (string stext)
+		public int clsintVowelCount (string strtext)
         {
             int intCount = 0;
             // make everything lower case to make matching easier - eliminates UPPER CASE letters
-            stext=stext.ToLower();
-            foreach (char c in stext)
+            strtext=strtext.ToLower();
+            foreach (char c in strtext)
             {
-                string stemp = Convert.ToString(c);
-                switch (stemp)
+                string strtemp = Convert.ToString(c);
+                switch (strtemp)
                 {
                     case "a":
                     case "e":
@@ -37,38 +37,38 @@ public class chomework05
             return intCount;
             
         }
-        public int iWordCount(string stext)
+        public int clsintWordCount(string strtext)
         {
-            MatchCollection collection = Regex.Matches(stext, @"[\S]+");
+            MatchCollection collection = Regex.Matches(strtext, @"[\S]+");
             return collection.Count;
         }
-        public string sReverse(string sText)
+        public string clsstrReverse(string strText)
         {
-            string sOut = "";
-            int intCounter = sText.Length;
+            string strOut = "";
+            int intCounter = strText.Length;
             int intPos = 0;
 
             while (intCounter >0)
             {
-                sOut=sOut+ sText.Last();
-                intPos = sText.Length-1;
+                strOut=strOut+ strText.Last();
+                intPos = strText.Length-1;
                 if (intPos > 0)
                 {
-                    sText = sText.Substring(0, sText.Length - 1);
+                    strText = strText.Substring(0, strText.Length - 1);
                     intCounter--;
                 }
                 else
                     intCounter--;
             }
 
-            return sOut;
+            return strOut;
         }
-        public string sPhone(string stext)
+        public string clsstrPhone(string strtext)
         {
-            stext=stext.Insert(0, "(");
-            stext = stext.Insert(4, ")-");
-            stext = stext.Insert(9, "-");
-            return stext;
+            strtext=strtext.Insert(0, "(");
+            strtext = strtext.Insert(4, ")-");
+            strtext = strtext.Insert(9, "-");
+            return strtext;
 
         }
 	

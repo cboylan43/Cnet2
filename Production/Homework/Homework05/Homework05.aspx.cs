@@ -11,8 +11,8 @@ using System.Web.UI.WebControls;
 
 public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
 {
-    chomework05 myCode = new chomework05();
-    chomework04 myCal = new chomework04();
+    chomework05 clsmyCode = new chomework05();
+    chomework04 clsmyCal = new chomework04();
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -26,47 +26,47 @@ public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
     }
     protected void btnCountVowels_Click(object sender, EventArgs e)
     {
-        string stemp = "This is the number of vowels - ";
-        if ( myCal.bStringCheck(txtSentence.Text))
+        string strtemp = "This is the number of vowels - ";
+        if ( clsmyCal.bStringCheck(txtSentence.Text))
         {
-            stemp = " You must enter a string into the Sentence box.";
+            strtemp = " You must enter a string into the Sentence box.";
         }
         else
 	    {
-            stemp = stemp + Convert.ToString(myCode.iVowelCount(txtSentence.Text));
+            strtemp = strtemp + Convert.ToString(clsmyCode.clsintVowelCount(txtSentence.Text));
                 
 	    }
         
-        msgbox(stemp);
+        msgbox(strtemp);
     }
     protected void btnCountWords_Click(object sender, EventArgs e)
     {
-        string stemp = "This is the number of words - ";
-        if (myCal.bStringCheck(txtSentence.Text))
+        string strtemp = "This is the number of words - ";
+        if (clsmyCal.bStringCheck(txtSentence.Text))
         {
-            stemp = " You must enter a string into the Sentence box.";
+            strtemp = " You must enter a string into the Sentence box.";
         }
         else
         {
-            stemp = stemp + Convert.ToString(myCode.iWordCount(txtSentence.Text));
+            strtemp = strtemp + Convert.ToString(clsmyCode.clsintWordCount(txtSentence.Text));
 
         }
 
-        msgbox(stemp);
+        msgbox(strtemp);
     }
     protected void btnReverse_Click(object sender, EventArgs e)
     {
-        string stemp = "";
-        if (myCal.bStringCheck(txtSentence.Text))
+        string strtemp = "";
+        if (clsmyCal.bStringCheck(txtSentence.Text))
         {
-            stemp = " You must enter a string into the Sentence box.";
-            msgbox(stemp);
+            strtemp = " You must enter a string into the Sentence box.";
+            msgbox(strtemp);
             
         }
         else
         {
-            stemp = Convert.ToString(myCode.sReverse(txtSentence.Text));
-            txtSentence.Text = stemp;
+            strtemp = Convert.ToString(clsmyCode.clsstrReverse(txtSentence.Text));
+            txtSentence.Text = strtemp;
 
         }
         
@@ -75,7 +75,7 @@ public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
     }
     protected void btnBreak_Click(object sender, EventArgs e)
     {
-        if (myCal.bStringCheck(txtRecord.Text))
+        if (clsmyCal.bStringCheck(txtRecord.Text))
             msgbox(" You must enter a string in the Record text box.");
         else
             BreakApartRecord();
@@ -83,13 +83,13 @@ public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
     }
     protected void BreakApartRecord ()
     {
-        int iCount = 1;
-        string sText = txtRecord.Text;
-        string[] split = sText.Split(',');
+        int intCount = 1;
+        string strText = txtRecord.Text;
+        string[] astrsplit = strText.Split(',');
 
-        foreach (string item in split)
+        foreach (string item in astrsplit)
         {
-            switch (iCount)
+            switch (intCount)
             {
                 case 1:
                     txtField1.Text = item.Trim();
@@ -114,7 +114,7 @@ public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
                     break;
 
             }
-            iCount++;
+            intCount++;
             txtRecord.Text = "";
         }
 
@@ -125,19 +125,19 @@ public partial class Homework_Homework05_Homework05 : System.Web.UI.Page
     }
     protected void PutFieldsTogether()
     {
-        string stemp = "";
-        string sSeperator = ",";
-        stemp = txtField1.Text + sSeperator + txtField2.Text + sSeperator + txtField3.Text + sSeperator + txtField4.Text + sSeperator + txtField5.Text + sSeperator + txtField6.Text;
+        string strtemp = "";
+        string strSeperator = ",";
+        strtemp = txtField1.Text + strSeperator + txtField2.Text + strSeperator + txtField3.Text + strSeperator + txtField4.Text + strSeperator + txtField5.Text + strSeperator + txtField6.Text;
         txtField1.Text = "";
         txtField2.Text = "";
         txtField3.Text = "";
         txtField4.Text = "";
         txtField5.Text = "";
         txtField6.Text = "";
-        txtRecord.Text = stemp;
+        txtRecord.Text = strtemp;
     }
     protected void btnPhone_Click(object sender, EventArgs e)
     {
-        txtPhoneOut.Text = myCode.sPhone(txtPhoneNumber.Text);
+        txtPhoneOut.Text = clsmyCode.clsstrPhone(txtPhoneNumber.Text);
     }
 }
